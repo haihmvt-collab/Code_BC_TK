@@ -147,6 +147,7 @@ b2c_aio1 %>% drop_na(ma_hd) -> b2c_aio1
 thang_n <- format(as.Date(today(), format = , format = "%Y-%m-%d"), format = "%m-%Y")
 thang_n1 <- format(as.Date(Sys.Date() %m+% months(1), format = , format = "%Y-%m-%d"), format = "%m-%Y")
 thang_n2 <- format(as.Date(Sys.Date() %m+% months(2), format = , format = "%Y-%m-%d"), format = "%m-%Y")
+b2c_aio1[4] <- lapply(b2c_aio1[4], as.numeric)
 b2c_aio1 %>%
   filter(!don_huy %in% c("Đề xuất hủy", "Hết hiệu lực")) %>%
   group_by(ma_tinh, am) %>%

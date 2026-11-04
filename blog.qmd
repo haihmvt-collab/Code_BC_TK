@@ -399,6 +399,7 @@ ngay_n_1 <- as.Date(today() - 1, format = , format = "%Y-%m-%d")
 ### <span style="color: #C35817;font-family: cambria;">**1. Chi tiết theo tỉnh tiến độ HĐ dự kiến lên DT tháng ** <strong>`r thang_n`</strong></span>
 
 ```{r, warning=FALSE, message=FALSE, results = 'hide', echo = FALSE}
+b2c_aio1[4] <- lapply(b2c_aio1[4], as.numeric)
 b2c_aio1 %>%
   group_by(ma_tinh, am) %>%
   summarise(gtri_dk = sum(gtri[!is.na(ma_hd) & thang_dk_DT == thang_n], na.rm = TRUE)/10^6,
