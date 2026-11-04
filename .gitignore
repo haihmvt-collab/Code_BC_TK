@@ -1,4 +1,3 @@
-_site/
 .Rproj.user/
 *.Rhistory
 *.RData
@@ -11,3 +10,5 @@ _site/
 .httr-oauth
 .DS_Store
 .quarto
+
+**/*.quarto_ipynb
