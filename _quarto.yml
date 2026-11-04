@@ -5,7 +5,7 @@ project:
       - last-build.json
 
 website:
-  title: "Nguyễn Nhung"
+  title: "Haihm"
   description: "Data • Visualization • R"
   favicon: images/favicon.png
   navbar:
@@ -17,7 +17,7 @@ website:
       - href: blog.qmd
         text: DỰ KIẾN DOANH THU THÁNG N
   page-footer:
-    left: "© {2025} Nguyễn Thị Trang Nhung"
+    left: "© {2025} Haihm"
     right: "Data Analyst"
 
 format:
