@@ -4,7 +4,13 @@ on:
   push:
     branches: [main]
   schedule:
+<<<<<<< HEAD
     - cron: '0 1 * * 1-5'   # 8:00 sáng giờ Việt Nam
+=======
+    - cron: '0 1 * * *'   # 8:00 sáng giờ Việt Nam
+    - cron: '0 7 * * *'   # 2:00 chiều
+    - cron: '0 10 * * *'  # 5:00 chiều
+>>>>>>> b5171588ba4e84552ffdd01a5be9f7dcacb1afaf
   workflow_dispatch:
 
 jobs:
