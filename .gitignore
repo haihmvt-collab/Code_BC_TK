@@ -10,5 +10,6 @@
 .httr-oauth
 .DS_Store
 .quarto
+_site/
 
 **/*.quarto_ipynb
