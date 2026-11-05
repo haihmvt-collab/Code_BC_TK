@@ -84,6 +84,18 @@ jobs:
         run: quarto render
         env:
           GCP_SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
+          
+      - name: Check Netlify token
+        run: |
+          echo "== Token thuộc tài khoản:"
+          curl -s -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" https://api.netlify.com/api/v1/user | jq -r '.email // .'
+          echo "== Quyền truy cập site (200 = OK):"
+          curl -s -o /dev/null -w "%{http_code}\n" -H "Authorization: Bearer $NETLIFY_AUTH_TOKEN" "https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID"
+          echo "== Độ dài Site ID (đúng là 36):"
+          echo -n "$NETLIFY_SITE_ID" | wc -c
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v3
